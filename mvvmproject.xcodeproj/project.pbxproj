@@ -10,7 +10,12 @@
 		190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190ECEEA20E6A92F0028DE9C /* AppDelegate.swift */; };
 		190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190ECEEC20E6A92F0028DE9C /* InitialViewController.swift */; };
 		190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190ECEF120E6A9300028DE9C /* Assets.xcassets */; };
+		196BF50E20EAC2930059E990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */; };
+		19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DD3F4620EAAE2000B31655 /* InitialViewController.xib */; };
 		19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A320EA8FAE00B79749 /* R.generated.swift */; };
+		19E511AA20EA956000B79749 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A920EA956000B79749 /* Coordinator.swift */; };
+		19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511AB20EA960F00B79749 /* ApplicationCoordinator.swift */; };
+		19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511AD20EA9A1300B79749 /* InitialViewCoordinator.swift */; };
 		BDF85EC3AB7E1F2322D4EEF2 /* Pods_mvvmproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5D64150B875E083990DF0A /* Pods_mvvmproject.framework */; };
 		C71E78CB20E6C1AE001BE172 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71E78CA20E6C1AE001BE172 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
@@ -21,7 +26,12 @@
 		190ECEEC20E6A92F0028DE9C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		190ECEF120E6A9300028DE9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		190ECEF620E6A9300028DE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19DD3F4620EAAE2000B31655 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		19E511A320EA8FAE00B79749 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = mvvmproject/Helpers/RSwift/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		19E511A920EA956000B79749 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		19E511AB20EA960F00B79749 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		19E511AD20EA9A1300B79749 /* InitialViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewCoordinator.swift; sourceTree = "<group>"; };
 		5A5D64150B875E083990DF0A /* Pods_mvvmproject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvmproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71E78CA20E6C1AE001BE172 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		C8CF9C5A16A2373D50ED716E /* Pods-mvvmproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvmproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-mvvmproject/Pods-mvvmproject.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				1970195720E6AEBD00D58375 /* Controller */,
+				19E511A520EA947B00B79749 /* Screens */,
+				19E511A820EA954600B79749 /* Coordinator */,
 				1927531820E6B20900689C43 /* Resources */,
 				1994B86820EA8F34001EE7DF /* Helpers */,
 			);
@@ -117,6 +129,25 @@
 				19E511A320EA8FAE00B79749 /* R.generated.swift */,
 			);
 			path = RSwift;
+			sourceTree = "<group>";
+		};
+		19E511A520EA947B00B79749 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				19DD3F4620EAAE2000B31655 /* InitialViewController.xib */,
+				196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		19E511A820EA954600B79749 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				19E511A920EA956000B79749 /* Coordinator.swift */,
+				19E511AB20EA960F00B79749 /* ApplicationCoordinator.swift */,
+				19E511AD20EA9A1300B79749 /* InitialViewCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		C71E78C920E6C1AE001BE172 /* Frameworks */ = {
@@ -199,7 +230,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196BF50E20EAC2930059E990 /* LaunchScreen.storyboard in Resources */,
 				190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */,
+				19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E511AA20EA956000B79749 /* Coordinator.swift in Sources */,
 				190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */,
+				19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */,
 				190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */,
+				19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */,
 				19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
