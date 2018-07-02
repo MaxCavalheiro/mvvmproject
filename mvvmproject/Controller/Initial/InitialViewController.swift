@@ -9,15 +9,15 @@
 import UIKit
 
 class InitialViewController: UIViewController {
+    private let interactor: InitialViewInteractor = InitialViewInteractor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func startButton(_ sender: Any) {
+        interactor.startButtonPressed()
     }
-
-
+    
 }
 

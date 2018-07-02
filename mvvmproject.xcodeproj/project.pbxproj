@@ -11,6 +11,7 @@
 		190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190ECEEC20E6A92F0028DE9C /* InitialViewController.swift */; };
 		190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190ECEF120E6A9300028DE9C /* Assets.xcassets */; };
 		196BF50E20EAC2930059E990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */; };
+		196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196BF51020EACAC00059E990 /* InitialViewInteractor.swift */; };
 		19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DD3F4620EAAE2000B31655 /* InitialViewController.xib */; };
 		19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A320EA8FAE00B79749 /* R.generated.swift */; };
 		19E511AA20EA956000B79749 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A920EA956000B79749 /* Coordinator.swift */; };
@@ -27,6 +28,7 @@
 		190ECEF120E6A9300028DE9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		190ECEF620E6A9300028DE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		196BF51020EACAC00059E990 /* InitialViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewInteractor.swift; sourceTree = "<group>"; };
 		19DD3F4620EAAE2000B31655 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		19E511A320EA8FAE00B79749 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = mvvmproject/Helpers/RSwift/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		19E511A920EA956000B79749 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				1970195720E6AEBD00D58375 /* Controller */,
 				19E511A520EA947B00B79749 /* Screens */,
+				196BF50F20EACA400059E990 /* Interactor */,
 				19E511A820EA954600B79749 /* Coordinator */,
 				1927531820E6B20900689C43 /* Resources */,
 				1994B86820EA8F34001EE7DF /* Helpers */,
@@ -88,6 +91,14 @@
 				190ECEF620E6A9300028DE9C /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		196BF50F20EACA400059E990 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				196BF51020EACAC00059E990 /* InitialViewInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		1970195620E6AD3400D58375 /* Initial */ = {
@@ -313,6 +324,7 @@
 				190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */,
 				19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */,
 				190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */,
+				196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */,
 				19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */,
 				19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */,
 			);

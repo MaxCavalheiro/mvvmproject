@@ -29,6 +29,9 @@
                     <state key="normal" title="Start">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="startButton:" destination="-1" eventType="touchUpInside" id="Otq-9L-OPr"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
