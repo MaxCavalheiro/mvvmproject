@@ -5,6 +5,7 @@
 
 import Foundation
 import Rswift
+import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
@@ -35,8 +36,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `InitialViewController`.
+    static let initialViewController = _R.nib._InitialViewController()
+    
+    /// `UINib(name: "InitialViewController", in: bundle)`
+    static func initialViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.initialViewController)
+    }
+    
     fileprivate init() {}
   }
   
@@ -50,8 +59,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 0 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+    
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
     fileprivate init() {}
   }
   
@@ -75,10 +92,30 @@ struct R: Rswift.Validatable {
 
 struct _R {
   struct nib {
+    struct _InitialViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "InitialViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
   struct storyboard {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = UIKit.UIViewController
+      
+      let bundle = R.hostingBundle
+      let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
