@@ -1,7 +1,7 @@
 //
 //  ResponseTests.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2017 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -227,7 +227,7 @@ class ResponseJSONTestCase: BaseTestCase {
     func testThatResponseStringReturnsFailureResultWithOptionalDataAndError() {
         // Given
         let urlString = "https://invalid-url-here.org/this/does/not/exist"
-        let expectation = self.expectation(description: "request should fail")
+        let expectation = self.expectation(description: "request should fail with 404")
 
         var response: DataResponse<Any>?
 
@@ -319,67 +319,6 @@ class ResponseJSONTestCase: BaseTestCase {
             XCTAssertEqual(form, ["foo": "bar"], "form should match parameters")
         } else {
             XCTFail("form should not be nil")
-        }
-    }
-}
-
-class ResponseJSONDecodableTestCase: BaseTestCase {
-    struct HTTPBinResponse: Decodable {
-        let headers: [String: String]
-        let origin: String
-        let url: String
-    }
-
-    func testThatResponseJSONReturnsSuccessResultWithValidJSON() {
-        // Given
-        let urlString = "https://httpbin.org/get"
-        let expectation = self.expectation(description: "request should succeed")
-
-        var response: DataResponse<HTTPBinResponse>?
-
-        // When
-        Alamofire.request(urlString, parameters: [:]).responseJSONDecodable { (resp: DataResponse<HTTPBinResponse>) in
-            response = resp
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: timeout, handler: nil)
-
-        // Then
-        XCTAssertNotNil(response?.request)
-        XCTAssertNotNil(response?.response)
-        XCTAssertNotNil(response?.data)
-        XCTAssertEqual(response?.result.isSuccess, true)
-        XCTAssertEqual(response?.result.value?.url, "https://httpbin.org/get")
-
-        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
-            XCTAssertNotNil(response?.metrics)
-        }
-    }
-
-    func testThatResponseStringReturnsFailureResultWithOptionalDataAndError() {
-        // Given
-        let urlString = "https://invalid-url-here.org/this/does/not/exist"
-        let expectation = self.expectation(description: "request should fail")
-
-        var response: DataResponse<HTTPBinResponse>?
-
-        // When
-        Alamofire.request(urlString, parameters: [:]).responseJSONDecodable { (resp: DataResponse<HTTPBinResponse>) in
-            response = resp
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: timeout, handler: nil)
-
-        // Then
-        XCTAssertNotNil(response?.request)
-        XCTAssertNil(response?.response)
-        XCTAssertNotNil(response?.data)
-        XCTAssertEqual(response?.result.isFailure, true)
-
-        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
-            XCTAssertNotNil(response?.metrics)
         }
     }
 }

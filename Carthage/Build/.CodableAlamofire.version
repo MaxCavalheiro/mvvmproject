@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.1.0",
+  "iOS" : [
+    {
+      "name" : "CodableAlamofire",
+      "hash" : "ec5a31548f785bec433dd46c872a034def9a92cde907a079b54f1907cffe49b5"
+    }
+  ]
+}

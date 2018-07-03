@@ -1,7 +1,7 @@
 //
 //  SessionDelegateTests.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2017 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -64,53 +64,67 @@ class SessionDelegateTestCase: BaseTestCase {
     // MARK: - Tests - Session Challenges
 
     func testThatSessionDidReceiveChallengeClosureIsCalledWhenSet() {
-        // Given
-        let expectation = self.expectation(description: "Override closure should be called")
+        if #available(iOS 9.0, *) {
+            // Given
+            let expectation = self.expectation(description: "Override closure should be called")
 
-        var overrideClosureCalled = false
-        var response: HTTPURLResponse?
+            var overrideClosureCalled = false
+            var response: HTTPURLResponse?
 
-        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-            overrideClosureCalled = true
-            return (.performDefaultHandling, nil)
+            manager.delegate.sessionDidReceiveChallenge = { session, challenge in
+                overrideClosureCalled = true
+                return (.performDefaultHandling, nil)
+            }
+
+            // When
+            manager.request("https://httpbin.org/get").responseJSON { closureResponse in
+                response = closureResponse.response
+                expectation.fulfill()
+            }
+
+            waitForExpectations(timeout: timeout, handler: nil)
+
+            // Then
+            XCTAssertTrue(overrideClosureCalled)
+            XCTAssertEqual(response?.statusCode, 200)
+        } else {
+            // This test MUST be disabled on iOS 8.x because `respondsToSelector` is not being called for the
+            // `URLSession:didReceiveChallenge:completionHandler:` selector when more than one test here is run
+            // at a time. Whether we flush the URL session of wipe all the shared credentials, the behavior is
+            // still the same. Until we find a better solution, we'll need to disable this test on iOS 8.x.
         }
-
-        // When
-        manager.request("https://httpbin.org/get").responseJSON { closureResponse in
-            response = closureResponse.response
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: timeout, handler: nil)
-
-        // Then
-        XCTAssertTrue(overrideClosureCalled)
-        XCTAssertEqual(response?.statusCode, 200)
     }
 
     func testThatSessionDidReceiveChallengeWithCompletionClosureIsCalledWhenSet() {
-        // Given
-        let expectation = self.expectation(description: "Override closure should be called")
+        if #available(iOS 9.0, *) {
+            // Given
+            let expectation = self.expectation(description: "Override closure should be called")
 
-        var overrideClosureCalled = false
-        var response: HTTPURLResponse?
+            var overrideClosureCalled = false
+            var response: HTTPURLResponse?
 
-        manager.delegate.sessionDidReceiveChallengeWithCompletion = { session, challenge, completion in
-            overrideClosureCalled = true
-            completion(.performDefaultHandling, nil)
+            manager.delegate.sessionDidReceiveChallengeWithCompletion = { session, challenge, completion in
+                overrideClosureCalled = true
+                completion(.performDefaultHandling, nil)
+            }
+
+            // When
+            manager.request("https://httpbin.org/get").responseJSON { closureResponse in
+                response = closureResponse.response
+                expectation.fulfill()
+            }
+
+            waitForExpectations(timeout: timeout, handler: nil)
+
+            // Then
+            XCTAssertTrue(overrideClosureCalled)
+            XCTAssertEqual(response?.statusCode, 200)
+        } else {
+            // This test MUST be disabled on iOS 8.x because `respondsToSelector` is not being called for the
+            // `URLSession:didReceiveChallenge:completionHandler:` selector when more than one test here is run
+            // at a time. Whether we flush the URL session of wipe all the shared credentials, the behavior is
+            // still the same. Until we find a better solution, we'll need to disable this test on iOS 8.x.
         }
-
-        // When
-        manager.request("https://httpbin.org/get").responseJSON { closureResponse in
-            response = closureResponse.response
-            expectation.fulfill()
-        }
-
-        waitForExpectations(timeout: timeout, handler: nil)
-
-        // Then
-        XCTAssertTrue(overrideClosureCalled)
-        XCTAssertEqual(response?.statusCode, 200)
     }
 
     // MARK: - Tests - Redirects
@@ -512,7 +526,7 @@ class SessionDelegateTestCase: BaseTestCase {
         var notificationCalledWithResponseData = false
         var response: HTTPURLResponse?
 
-        let expectation = self.expectation(forNotification: Notification.Name.Task.DidComplete, object: nil) { notif -> Bool in
+        let expectation = self.expectation(forNotification: Notification.Name.Task.DidComplete.rawValue, object: nil) { notif -> Bool in
 
             // check that we are handling notif for a dataTask
             guard let task = notif.userInfo?[Notification.Key.Task] as? URLSessionDataTask else {
@@ -543,12 +557,8 @@ class SessionDelegateTestCase: BaseTestCase {
         // Given
         var notificationCalledWithNilResponseData = false
         var response: HTTPURLResponse?
-        #if swift(>=4.1)
-        let notification = Notification.Name.Task.DidComplete
-        #else
-        let notification = Notification.Name.Task.DidComplete.rawValue
-        #endif
-        let expectation = self.expectation(forNotification: notification, object: nil) { notif -> Bool in
+
+        let expectation = self.expectation(forNotification: Notification.Name.Task.DidComplete.rawValue, object: nil) { notif -> Bool in
 
             // check that we are handling notif for a downloadTask
             guard let task = notif.userInfo?[Notification.Key.Task] as? URLSessionDownloadTask else {
@@ -563,7 +573,7 @@ class SessionDelegateTestCase: BaseTestCase {
         }
 
         // When
-        manager.download("https://httpbin.org/get").response { resp in }
+        manager.download("https://httpbin.org/get").response {resp in }
 
         wait(for: [expectation], timeout: timeout)
 
