@@ -10,6 +10,7 @@
 		190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190ECEEA20E6A92F0028DE9C /* AppDelegate.swift */; };
 		190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190ECEEC20E6A92F0028DE9C /* InitialViewController.swift */; };
 		190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190ECEF120E6A9300028DE9C /* Assets.xcassets */; };
+		191C2BE620EBF178009322F4 /* CodableAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 191C2BE520EBF178009322F4 /* CodableAlamofire.framework */; };
 		196BF50E20EAC2930059E990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */; };
 		196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196BF51020EACAC00059E990 /* InitialViewInteractor.swift */; };
 		19C0D9F420EBDD0F00623E79 /* InitialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0D9F320EBDD0F00623E79 /* InitialModel.swift */; };
@@ -29,6 +30,7 @@
 		190ECEEC20E6A92F0028DE9C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		190ECEF120E6A9300028DE9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		190ECEF620E6A9300028DE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		191C2BE520EBF178009322F4 /* CodableAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CodableAlamofire.framework; path = Carthage/Build/iOS/CodableAlamofire.framework; sourceTree = "<group>"; };
 		196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		196BF51020EACAC00059E990 /* InitialViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewInteractor.swift; sourceTree = "<group>"; };
 		19C0D9F320EBDD0F00623E79 /* InitialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialModel.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			files = (
 				C71E78CB20E6C1AE001BE172 /* Alamofire.framework in Frameworks */,
 				BDF85EC3AB7E1F2322D4EEF2 /* Pods_mvvmproject.framework in Frameworks */,
+				191C2BE620EBF178009322F4 /* CodableAlamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,7 @@
 		C71E78C920E6C1AE001BE172 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				191C2BE520EBF178009322F4 /* CodableAlamofire.framework */,
 				C71E78CA20E6C1AE001BE172 /* Alamofire.framework */,
 				5A5D64150B875E083990DF0A /* Pods_mvvmproject.framework */,
 			);
@@ -296,6 +300,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CodableAlamofire.framework",
 			);
 			outputPaths = (
 			);

@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 
 class InitialViewInteractor {
+    
     func startButtonPressed() {
-        //Called when "Start" button as pressed
-    }
-    
-    func coordinatorCaller() {
-        //Called when the transition of screens occurred
-    }
-    
-    func responseError() {
-        //Called when server connection fails (show alert or something)
+        InitialWorker.takeAccess { initialModel in
+            if let model = initialModel, model.access == true {
+                //Call table view screen coordinator
+            } else {
+                //Call "Tu é um lock" screen coordinator
+            }
+        }
     }
 }

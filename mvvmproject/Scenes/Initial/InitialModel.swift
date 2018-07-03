@@ -3,11 +3,11 @@
 //  mvvmproject
 //
 //  Created by Nodo Digital on 7/3/18.
-//  Copyright © 2018 Nodo Digital. All rights reserved.
+//  Copyright © 2018 Gustavo Ludtke. All rights reserved.
 //
 
 import Foundation
 
-struct InitialModel: Codable {
+struct InitialModel: Decodable {
     let access: Bool
 }
