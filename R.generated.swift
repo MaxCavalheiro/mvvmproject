@@ -36,16 +36,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
+    /// Nib `TableViewCell`.
+    static let tableViewCell = _R.nib._TableViewCell()
     /// Nib `TableViewController`.
     static let tableViewController = _R.nib._TableViewController()
     
     /// `UINib(name: "InitialViewController", in: bundle)`
     static func initialViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.initialViewController)
+    }
+    
+    /// `UINib(name: "TableViewCell", in: bundle)`
+    static func tableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewCell)
     }
     
     /// `UINib(name: "TableViewController", in: bundle)`
@@ -56,8 +63,11 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `nameAndNumberCell`.
+    static let nameAndNumberCell: Rswift.ReuseIdentifier<TableViewCellController> = Rswift.ReuseIdentifier(identifier: "nameAndNumberCell")
+    
     fileprivate init() {}
   }
   
@@ -105,6 +115,20 @@ struct _R {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _TableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = TableViewCellController
+      
+      let bundle = R.hostingBundle
+      let identifier = "nameAndNumberCell"
+      let name = "TableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> TableViewCellController? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCellController
       }
       
       fileprivate init() {}

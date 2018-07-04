@@ -18,6 +18,11 @@
 		196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196BF51020EACAC00059E990 /* InitialViewInteractor.swift */; };
 		19C0D9F420EBDD0F00623E79 /* InitialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0D9F320EBDD0F00623E79 /* InitialModel.swift */; };
 		19C0D9F620EBDD2D00623E79 /* InitialWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0D9F520EBDD2D00623E79 /* InitialWorker.swift */; };
+		19C6322120ED655C0042A8DE /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C6322020ED655C0042A8DE /* TableViewCell.xib */; };
+		19C6322320ED67530042A8DE /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6322220ED67530042A8DE /* TableViewCellController.swift */; };
+		19C6322520ED687F0042A8DE /* TableViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6322420ED687F0042A8DE /* TableViewWorker.swift */; };
+		19C6322720ED69220042A8DE /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6322620ED69220042A8DE /* TableViewModel.swift */; };
+		19C6322920ED6B320042A8DE /* TableViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6322820ED6B320042A8DE /* TableViewInteractor.swift */; };
 		19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19DD3F4620EAAE2000B31655 /* InitialViewController.xib */; };
 		19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A320EA8FAE00B79749 /* R.generated.swift */; };
 		19E511AA20EA956000B79749 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A920EA956000B79749 /* Coordinator.swift */; };
@@ -41,6 +46,11 @@
 		196BF51020EACAC00059E990 /* InitialViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewInteractor.swift; sourceTree = "<group>"; };
 		19C0D9F320EBDD0F00623E79 /* InitialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialModel.swift; sourceTree = "<group>"; };
 		19C0D9F520EBDD2D00623E79 /* InitialWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialWorker.swift; sourceTree = "<group>"; };
+		19C6322020ED655C0042A8DE /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		19C6322220ED67530042A8DE /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
+		19C6322420ED687F0042A8DE /* TableViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWorker.swift; sourceTree = "<group>"; };
+		19C6322620ED69220042A8DE /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		19C6322820ED6B320042A8DE /* TableViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInteractor.swift; sourceTree = "<group>"; };
 		19DD3F4620EAAE2000B31655 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		19E511A320EA8FAE00B79749 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = mvvmproject/Helpers/RSwift/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		19E511A920EA956000B79749 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -99,8 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				191C2BEC20EC1B7A009322F4 /* TableViewController.swift */,
+				19C6322820ED6B320042A8DE /* TableViewInteractor.swift */,
 				191C2BEA20EC1B0C009322F4 /* TableViewCoordinator.swift */,
+				19C6322420ED687F0042A8DE /* TableViewWorker.swift */,
+				19C6322620ED69220042A8DE /* TableViewModel.swift */,
 				191C2BE820EC1A6E009322F4 /* TableViewController.xib */,
+				19C6321F20ED65380042A8DE /* Cell */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -153,6 +167,15 @@
 				196BF50D20EAC2930059E990 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		19C6321F20ED65380042A8DE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				19C6322220ED67530042A8DE /* TableViewCellController.swift */,
+				19C6322020ED655C0042A8DE /* TableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		19E511A220EA8F6B00B79749 /* RSwift */ = {
@@ -253,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				196BF50E20EAC2930059E990 /* LaunchScreen.storyboard in Resources */,
+				19C6322120ED655C0042A8DE /* TableViewCell.xib in Resources */,
 				191C2BE920EC1A6E009322F4 /* TableViewController.xib in Resources */,
 				190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */,
 				19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */,
@@ -333,6 +357,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C6322520ED687F0042A8DE /* TableViewWorker.swift in Sources */,
+				19C6322720ED69220042A8DE /* TableViewModel.swift in Sources */,
 				19C0D9F620EBDD2D00623E79 /* InitialWorker.swift in Sources */,
 				19C0D9F420EBDD0F00623E79 /* InitialModel.swift in Sources */,
 				19E511AA20EA956000B79749 /* Coordinator.swift in Sources */,
@@ -340,7 +366,9 @@
 				19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */,
 				190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */,
 				191C2BED20EC1B7A009322F4 /* TableViewController.swift in Sources */,
+				19C6322320ED67530042A8DE /* TableViewCellController.swift in Sources */,
 				191C2BEB20EC1B0C009322F4 /* TableViewCoordinator.swift in Sources */,
+				19C6322920ED6B320042A8DE /* TableViewInteractor.swift in Sources */,
 				196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */,
 				19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */,
 				19E511A420EA8FAE00B79749 /* R.generated.swift in Sources */,
