@@ -10,16 +10,27 @@ import UIKit
 
 class InitialViewCoordinator: Coordinator {
     private let presenter: UINavigationController
-    private var initialViewController: InitialViewController?
+    private var initialViewController: InitialViewController
+    private var initialInterctor: InitialViewInteractor
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
+        initialInterctor = InitialViewInteractor()
+        initialViewController = InitialViewController(interector: initialInterctor)
     }
     
     func start() {
-        let initialViewController = InitialViewController()
+        initialInterctor.delegate = self
         presenter.pushViewController(initialViewController, animated: true)
-        
-        self.initialViewController = initialViewController
+    }
+}
+
+extension InitialViewCoordinator: InitialViewCoordinatorProtocol {
+    
+    func changeScreen(_ toScreen: Bool) {
+        if toScreen == true {
+            let tableViewCoordinator = TableViewCoordinator(presenter: presenter)
+            tableViewCoordinator.start()
+        }
     }
 }

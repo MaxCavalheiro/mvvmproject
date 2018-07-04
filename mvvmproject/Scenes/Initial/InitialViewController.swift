@@ -9,8 +9,18 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-    private let interactor: InitialViewInteractor = InitialViewInteractor()
+    
+    fileprivate let interactor: InitialViewInteractor
 
+    init(interector: InitialViewInteractor) {
+        self.interactor = interector
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

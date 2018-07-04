@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
+protocol InitialViewCoordinatorProtocol: class {
+    func changeScreen(_ toScreen: Bool)
+}
+
 class InitialViewInteractor {
+    
+    weak var delegate: InitialViewCoordinatorProtocol?
     
     func startButtonPressed() {
         InitialWorker.takeAccess { initialModel in
-            if let model = initialModel, model.access == true {
-                //Call table view screen coordinator
-            } else {
-                //Call "Tu é um lock" screen coordinator
+            if let model = initialModel {
+                self.delegate?.changeScreen(model.access)
             }
         }
     }

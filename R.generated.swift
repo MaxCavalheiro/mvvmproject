@@ -36,14 +36,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
+    /// Nib `TableViewController`.
+    static let tableViewController = _R.nib._TableViewController()
     
     /// `UINib(name: "InitialViewController", in: bundle)`
     static func initialViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.initialViewController)
+    }
+    
+    /// `UINib(name: "TableViewController", in: bundle)`
+    static func tableViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewController)
     }
     
     fileprivate init() {}
@@ -95,6 +102,17 @@ struct _R {
     struct _InitialViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "InitialViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _TableViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TableViewController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
