@@ -10,7 +10,7 @@ import Foundation
 
 struct TableViewModel: Decodable {
     let name: String
-    let number: Int
+    let number: String
     
     private enum CodingKeys: String, CodingKey {
         case name

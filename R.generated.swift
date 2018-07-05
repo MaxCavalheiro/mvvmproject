@@ -36,23 +36,25 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
-    /// Nib `TableViewCell`.
-    static let tableViewCell = _R.nib._TableViewCell()
+    /// Nib `ListTableViewCell`.
+    static let listTableViewCell = _R.nib._ListTableViewCell()
     /// Nib `TableViewController`.
     static let tableViewController = _R.nib._TableViewController()
+    /// Nib `TableViewDetailController`.
+    static let tableViewDetailController = _R.nib._TableViewDetailController()
     
     /// `UINib(name: "InitialViewController", in: bundle)`
     static func initialViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.initialViewController)
     }
     
-    /// `UINib(name: "TableViewCell", in: bundle)`
-    static func tableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.tableViewCell)
+    /// `UINib(name: "ListTableViewCell", in: bundle)`
+    static func listTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.listTableViewCell)
     }
     
     /// `UINib(name: "TableViewController", in: bundle)`
@@ -60,13 +62,18 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.tableViewController)
     }
     
+    /// `UINib(name: "TableViewDetailController", in: bundle)`
+    static func tableViewDetailController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewDetailController)
+    }
+    
     fileprivate init() {}
   }
   
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `nameAndNumberCell`.
-    static let nameAndNumberCell: Rswift.ReuseIdentifier<TableViewCellController> = Rswift.ReuseIdentifier(identifier: "nameAndNumberCell")
+    /// Reuse identifier `ListTableViewCell`.
+    static let listTableViewCell: Rswift.ReuseIdentifier<ListTableViewCell> = Rswift.ReuseIdentifier(identifier: "ListTableViewCell")
     
     fileprivate init() {}
   }
@@ -120,15 +127,15 @@ struct _R {
       fileprivate init() {}
     }
     
-    struct _TableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = TableViewCellController
+    struct _ListTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ListTableViewCell
       
       let bundle = R.hostingBundle
-      let identifier = "nameAndNumberCell"
-      let name = "TableViewCell"
+      let identifier = "ListTableViewCell"
+      let name = "ListTableViewCell"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> TableViewCellController? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCellController
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ListTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ListTableViewCell
       }
       
       fileprivate init() {}
@@ -137,6 +144,17 @@ struct _R {
     struct _TableViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "TableViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _TableViewDetailController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TableViewDetailController"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

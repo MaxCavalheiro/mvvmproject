@@ -10,8 +10,8 @@ import UIKit
 
 class InitialViewCoordinator: Coordinator {
     private let presenter: UINavigationController
-    private var initialViewController: InitialViewController
-    private var initialInterctor: InitialViewInteractor
+    private let initialViewController: InitialViewController
+    private let initialInterctor: InitialViewInteractor
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -31,6 +31,8 @@ extension InitialViewCoordinator: InitialViewCoordinatorProtocol {
         if toScreen == true {
             let tableViewCoordinator = TableViewCoordinator(presenter: presenter)
             tableViewCoordinator.start()
+        } else {
+            //Other ViewController
         }
     }
 }

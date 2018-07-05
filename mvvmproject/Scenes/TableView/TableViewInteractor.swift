@@ -9,26 +9,31 @@
 import Foundation
 import UIKit
 
+protocol  TableViewInterectorLoadData: class {
+    func loadData(data: [TableViewModel])
+}
+
+protocol  TableViewInterectorPushDetail: class {
+    func pushToDetailViewController(data: TableViewModel)
+}
+
 class TableViewInteractor {
-    func initializer() {
+    
+    weak var delegate: TableViewInterectorLoadData?
+    var delegateCoordinator: TableViewInterectorPushDetail?
+    
+    func fetchListData() {
         //Call when the table view enters the scene (request function)
+    
         TableViewWorker.takeData { tableViewModel in
-            if let models = tableViewModel {
-                //Data arrival successful
+            if let models = tableViewModel, models.count > 0 {
+                self.delegate?.loadData(data: models)
             }
         }
     }
     
-    func numberOfPeople() {
-        //Call when the table view is configuring the number of cells
-    }
-    
-    func cellForRow() {
-        //Call when the code will configure a cell
-    }
-    
-    func cellSelected() {
-        //Call when cell as selected in Table View
+    func cellSelected(data: TableViewModel) {
+        self.delegateCoordinator?.pushToDetailViewController(data: data)
     }
     
 }
