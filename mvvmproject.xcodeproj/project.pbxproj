@@ -26,6 +26,10 @@
 		19E511AA20EA956000B79749 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511A920EA956000B79749 /* Coordinator.swift */; };
 		19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511AB20EA960F00B79749 /* ApplicationCoordinator.swift */; };
 		19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E511AD20EA9A1300B79749 /* InitialViewCoordinator.swift */; };
+		19F3EB1F20EEB26500EE35D2 /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F3EB1D20EEB26500EE35D2 /* BlockViewController.swift */; };
+		19F3EB2020EEB26500EE35D2 /* BlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F3EB1E20EEB26500EE35D2 /* BlockViewController.xib */; };
+		19F3EB2220EEB37B00EE35D2 /* BlockViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F3EB2120EEB37B00EE35D2 /* BlockViewCoordinator.swift */; };
+		19F3EB2420EEB39D00EE35D2 /* BlockViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F3EB2320EEB39D00EE35D2 /* BlockViewInteractor.swift */; };
 		BDF85EC3AB7E1F2322D4EEF2 /* Pods_mvvmproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5D64150B875E083990DF0A /* Pods_mvvmproject.framework */; };
 		C717516520EE901300E7E88E /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717516320EE901300E7E88E /* ListTableViewCell.swift */; };
 		C717516620EE901300E7E88E /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C717516420EE901300E7E88E /* ListTableViewCell.xib */; };
@@ -54,10 +58,14 @@
 		19C6322620ED69220042A8DE /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		19C6322820ED6B320042A8DE /* TableViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInteractor.swift; sourceTree = "<group>"; };
 		19DD3F4620EAAE2000B31655 /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
-		19E511A320EA8FAE00B79749 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = mvvmproject/Helpers/RSwift/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		19E511A320EA8FAE00B79749 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		19E511A920EA956000B79749 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		19E511AB20EA960F00B79749 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		19E511AD20EA9A1300B79749 /* InitialViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewCoordinator.swift; sourceTree = "<group>"; };
+		19F3EB1D20EEB26500EE35D2 /* BlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
+		19F3EB1E20EEB26500EE35D2 /* BlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockViewController.xib; sourceTree = "<group>"; };
+		19F3EB2120EEB37B00EE35D2 /* BlockViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewCoordinator.swift; sourceTree = "<group>"; };
+		19F3EB2320EEB39D00EE35D2 /* BlockViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockViewInteractor.swift; sourceTree = "<group>"; };
 		5A5D64150B875E083990DF0A /* Pods_mvvmproject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvmproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C717516320EE901300E7E88E /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		C717516420EE901300E7E88E /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 				19C0D9F020EBD6D800623E79 /* Initial */,
 				191C2BE720EC19C3009322F4 /* TableView */,
 				C717516720EE943200E7E88E /* TableViewDetail */,
+				19F3EB1A20EEB11D00EE35D2 /* BlockView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,13 +212,24 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		19F3EB1A20EEB11D00EE35D2 /* BlockView */ = {
+			isa = PBXGroup;
+			children = (
+				19F3EB1D20EEB26500EE35D2 /* BlockViewController.swift */,
+				19F3EB2320EEB39D00EE35D2 /* BlockViewInteractor.swift */,
+				19F3EB2120EEB37B00EE35D2 /* BlockViewCoordinator.swift */,
+				19F3EB1E20EEB26500EE35D2 /* BlockViewController.xib */,
+			);
+			path = BlockView;
+			sourceTree = "<group>";
+		};
 		C717516720EE943200E7E88E /* TableViewDetail */ = {
 			isa = PBXGroup;
 			children = (
 				C717516820EE948900E7E88E /* TableViewDetailController.swift */,
-				C717516920EE948900E7E88E /* TableViewDetailController.xib */,
 				C717516C20EE965E00E7E88E /* TableViewDetailCoordinator.swift */,
 				C717516E20EE979700E7E88E /* TableViewDetailInteractor.swift */,
+				C717516920EE948900E7E88E /* TableViewDetailController.xib */,
 			);
 			path = TableViewDetail;
 			sourceTree = "<group>";
@@ -300,6 +320,7 @@
 				C717516620EE901300E7E88E /* ListTableViewCell.xib in Resources */,
 				191C2BE920EC1A6E009322F4 /* TableViewController.xib in Resources */,
 				190ECEF220E6A9300028DE9C /* Assets.xcassets in Resources */,
+				19F3EB2020EEB26500EE35D2 /* BlockViewController.xib in Resources */,
 				19DD3F4720EAAE2000B31655 /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,12 +407,15 @@
 				19C0D9F420EBDD0F00623E79 /* InitialModel.swift in Sources */,
 				19E511AA20EA956000B79749 /* Coordinator.swift in Sources */,
 				190ECEED20E6A92F0028DE9C /* InitialViewController.swift in Sources */,
+				19F3EB2420EEB39D00EE35D2 /* BlockViewInteractor.swift in Sources */,
 				19E511AC20EA960F00B79749 /* ApplicationCoordinator.swift in Sources */,
 				C717516D20EE965E00E7E88E /* TableViewDetailCoordinator.swift in Sources */,
+				19F3EB1F20EEB26500EE35D2 /* BlockViewController.swift in Sources */,
 				190ECEEB20E6A92F0028DE9C /* AppDelegate.swift in Sources */,
 				191C2BED20EC1B7A009322F4 /* TableViewController.swift in Sources */,
 				191C2BEB20EC1B0C009322F4 /* TableViewCoordinator.swift in Sources */,
 				19C6322920ED6B320042A8DE /* TableViewInteractor.swift in Sources */,
+				19F3EB2220EEB37B00EE35D2 /* BlockViewCoordinator.swift in Sources */,
 				196BF51120EACAC00059E990 /* InitialViewInteractor.swift in Sources */,
 				C717516F20EE979700E7E88E /* TableViewDetailInteractor.swift in Sources */,
 				19E511AE20EA9A1300B79749 /* InitialViewCoordinator.swift in Sources */,

@@ -9,6 +9,7 @@
 import UIKit
 
 class InitialViewController: UIViewController {
+    @IBOutlet weak var logo: UIImageView!
     
     fileprivate let interactor: InitialViewInteractor
 
@@ -23,6 +24,7 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logo.image = R.image.nodoIcon()
     }
 
     @IBAction func startButton(_ sender: Any) {

@@ -31,13 +31,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
+    /// Image `nodoIcon`.
+    static let nodoIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "nodoIcon")
+    
+    /// `UIImage(named: "nodoIcon", bundle: ..., traitCollection: ...)`
+    static func nodoIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nodoIcon, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
+    /// Nib `BlockViewController`.
+    static let blockViewController = _R.nib._BlockViewController()
     /// Nib `InitialViewController`.
     static let initialViewController = _R.nib._InitialViewController()
     /// Nib `ListTableViewCell`.
@@ -46,6 +56,11 @@ struct R: Rswift.Validatable {
     static let tableViewController = _R.nib._TableViewController()
     /// Nib `TableViewDetailController`.
     static let tableViewDetailController = _R.nib._TableViewDetailController()
+    
+    /// `UINib(name: "BlockViewController", in: bundle)`
+    static func blockViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.blockViewController)
+    }
     
     /// `UINib(name: "InitialViewController", in: bundle)`
     static func initialViewController(_: Void = ()) -> UIKit.UINib {
@@ -116,6 +131,17 @@ struct R: Rswift.Validatable {
 
 struct _R {
   struct nib {
+    struct _BlockViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "BlockViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _InitialViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "InitialViewController"

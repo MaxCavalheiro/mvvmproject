@@ -8,6 +8,4 @@
 
 import UIKit
 
-class TableViewDetailInteractor {
-    
-}
+class TableViewDetailInteractor { }

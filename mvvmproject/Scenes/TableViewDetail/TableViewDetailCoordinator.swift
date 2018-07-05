@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TableViewDetailCoordinator : Coordinator {
+class TableViewDetailCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private let tableViewDetailController: TableViewDetailController
@@ -19,7 +19,6 @@ class TableViewDetailCoordinator : Coordinator {
         self.presenter = presenter
         tableViewDetailInteractor = TableViewDetailInteractor()
         tableViewDetailController = TableViewDetailController(interactor: tableViewDetailInteractor, data: data)
-        tableViewDetailController.data = data
     }
     
     func start() {

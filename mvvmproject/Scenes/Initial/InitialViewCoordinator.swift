@@ -32,7 +32,8 @@ extension InitialViewCoordinator: InitialViewCoordinatorProtocol {
             let tableViewCoordinator = TableViewCoordinator(presenter: presenter)
             tableViewCoordinator.start()
         } else {
-            //Other ViewController
+            let blockViewCoordinator = BlockViewCoordinator(presenter: presenter)
+            blockViewCoordinator.start()
         }
     }
 }

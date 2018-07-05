@@ -12,6 +12,7 @@ import UIKit
 class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private let interector: TableViewInteractor
     
     var data: [TableViewModel] = []
@@ -30,12 +31,14 @@ class TableViewController: UIViewController {
         
         setupInterector()
         setupTableView()
+        setupActivityIndicator()
         fetchTableListData()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 50
         tableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
     }
     
@@ -45,6 +48,16 @@ class TableViewController: UIViewController {
     
     private func fetchTableListData() {
         interector.fetchListData()
+    }
+    
+    private func setupActivityIndicator() {
+        if data.count > 0 {
+            activityIndicator.stopAnimating()
+            tableView.isHidden = false
+        } else {
+            activityIndicator.startAnimating()
+            tableView.isHidden = true
+        }
     }
     
     private func reloadTableView() {
@@ -83,6 +96,7 @@ extension TableViewController: TableViewInterectorLoadData {
     func loadData(data: [TableViewModel]) {
         self.data = data
         self.reloadTableView()
+        self.setupActivityIndicator()
     }
     
 }

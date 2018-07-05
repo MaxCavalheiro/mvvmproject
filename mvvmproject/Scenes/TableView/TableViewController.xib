@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController" customModule="mvvmproject" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Poc-qB-tIT" id="l1v-FO-iLO"/>
                 <outlet property="tableView" destination="IWe-qH-kZh" id="QWv-P7-C1r"/>
                 <outlet property="view" destination="iN0-l3-epB" id="hgK-w9-KMv"/>
             </connections>
@@ -24,14 +25,20 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-qH-kZh">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" red="0.92942303420000005" green="0.94905692340000003" blue="0.95673841240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-qB-tIT">
+                    <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.92942303420000005" green="0.94905692340000003" blue="0.95673841240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Poc-qB-tIT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="52k-gC-00R"/>
                 <constraint firstItem="IWe-qH-kZh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="J4w-yK-IkK"/>
                 <constraint firstItem="IWe-qH-kZh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eHX-wT-gtX"/>
                 <constraint firstItem="IWe-qH-kZh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fzK-Yy-BFB"/>
                 <constraint firstItem="IWe-qH-kZh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="oKe-gg-hKu"/>
+                <constraint firstItem="Poc-qB-tIT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ytT-ia-GSl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>

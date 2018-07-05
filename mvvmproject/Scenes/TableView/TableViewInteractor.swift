@@ -23,8 +23,6 @@ class TableViewInteractor {
     var delegateCoordinator: TableViewInterectorPushDetail?
     
     func fetchListData() {
-        //Call when the table view enters the scene (request function)
-    
         TableViewWorker.takeData { tableViewModel in
             if let models = tableViewModel, models.count > 0 {
                 self.delegate?.loadData(data: models)

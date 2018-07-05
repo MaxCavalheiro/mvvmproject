@@ -23,7 +23,6 @@ class TableViewCoordinator: Coordinator {
     
     func start() {
         tableViewInteractor.delegateCoordinator = self
-//        tableViewInteractor.delegate = tableViewController
         presenter.pushViewController(tableViewController, animated: true)
     }
 }
